@@ -1,0 +1,69 @@
+apply plugin: 'com.android.model.application'
+
+model {
+
+    repositories {
+        libs(PrebuiltLibraries){
+            OpenCV {
+                headers.srcDir "/home/Android/OpenCV-android-sdk/sdk/native/jni/include"
+                binaries.withType(SharedLibraryBinary) {
+                    sharedLibraryFile = file("./src/main/jniLibs/${targetPlatform.getName()}/libopencv_java3.so")
+                }
+            }
+        }
+    }
+
+    android {
+        compileSdkVersion 24
+        buildToolsVersion "24.0.2"
+        defaultConfig {
+            applicationId "golemdigital.tinytest"
+            minSdkVersion.apiLevel 21
+            targetSdkVersion.apiLevel 24
+            versionCode 1
+            versionName "1.0"
+            testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles.add(file('proguard-rules.pro'))
+            }
+        }
+
+        ndk {
+            moduleName = "tiny_ndk"
+
+            cppFlags.addAll(["-std=c++11", "-fexceptions", "-frtti"])
+            cppFlags.add("-I${file("./src/natLib")}".toString())
+
+            ldLibs.addAll(["android", "EGL", "GLESv2", "dl", "log", "z", "atomic"])
+            stl = "c++_static"
+
+            abiFilters.addAll(["armeabi", "armeabli-v7a", "arm64-v8a", "x86" , "x86_64"])
+        }
+
+        sources{
+            main{
+                jni{
+                    dependencies {
+                       library "OpenCV"
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':openCVLibrary310')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
+}

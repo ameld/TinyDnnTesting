@@ -1,0 +1,7 @@
+/home/amel/tiny-dnn/examples/CMakeFiles/rebuild_cache.dir
+/home/amel/tiny-dnn/examples/CMakeFiles/example_cifar_train.dir
+/home/amel/tiny-dnn/examples/CMakeFiles/benchmarks_all.dir
+/home/amel/tiny-dnn/examples/CMakeFiles/example_deconv_train.dir
+/home/amel/tiny-dnn/examples/CMakeFiles/edit_cache.dir
+/home/amel/tiny-dnn/examples/CMakeFiles/example_mnist_train.dir
+/home/amel/tiny-dnn/examples/CMakeFiles/example_mnist_test.dir

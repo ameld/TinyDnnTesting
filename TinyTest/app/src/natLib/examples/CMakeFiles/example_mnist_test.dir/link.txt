@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/example_mnist_test.dir/mnist/test_with_stb_image.o  -o example_mnist_test -rdynamic 

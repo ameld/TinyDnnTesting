@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/example_mnist_train.dir/mnist/train.o  -o example_mnist_train -rdynamic 

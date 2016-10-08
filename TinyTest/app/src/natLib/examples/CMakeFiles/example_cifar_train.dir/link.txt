@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/example_cifar_train.dir/cifar10/train.o  -o example_cifar_train -rdynamic 

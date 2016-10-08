@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/amel/tiny-dnn/examples/cifar10/train.cpp
+iostream
+-
+vector
+-
+tiny_dnn/tiny_dnn.h
+/home/amel/tiny-dnn/examples/cifar10/tiny_dnn/tiny_dnn.h
+
